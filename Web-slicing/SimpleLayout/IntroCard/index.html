@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Layout</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="carditems">
+                <div class="item">
+                    <img src="https://picsum.photos/300/300?random=1" alt="">
+                    <div class="txt">
+                        <h2>布蕾</h2>
+                        <p>Elit cillum tempor minim nisi ad anim. Nisi cillum do enim et. Fugiat commodo deserunt Lorem qui ut proident culpa enim enim. Occaecat do sunt anim voluptate cupidatat occaecat quis exercitation dolore exercitation id. Aliquip
+                            veniam dolore esse proident consectetur labore et enim ex aute est consectetur nisi quis.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/300/300?random=2" alt="">
+                    <div class="txt">
+                        <h2>數據廟</h2>
+                        <p>Adipisicing aliquip proident irure amet eu aliquip mollit culpa. Dolore proident ut nulla pariatur excepteur veniam irure amet minim nulla minim ex ex commodo. Qui pariatur reprehender it sint nostrud officia nostrud nostrud aute
+                            adipisicing au te commodo ullamco excepteur. Anim incididunt nostrud adipisicing fugiat.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/300/300?random=3" alt="">
+                    <div class="txt">
+                        <h2>有個美莓</h2>
+                        <p>Mollit minim do excepteur consectetur sunt cupidatat non do anim ipsum deserunt labore voluptate excepteur. Fugiat elit commodo sint eu cillum id. Incididunt sint cillum culpa anim adi pisicing et qui. In in aute culpa fugiat anim
+                            anim dolore n ulla culpa proident ad proident dolor quis. Sunt cupi datat aute Lorem aute consectetur occaecat ullamco eiusmod magna.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/300/300?random=4" alt="">
+                    <div class="txt">
+                        <h2>紅石榴</h2>
+                        <p>Mollit minim do excepteur consectetur sunt cupidatat non do anim ipsum deserunt labore voluptate excepteur. Fugiat elit commodo sint eu cillum id. Incididunt sint cillum culpa anim adi pisicing et qui. In in aute culpa fugiat anim
+                            anim dolore n ulla culpa proident ad proident dolor quis. Sunt cupi datat aute Lorem aute consectetur occaecat ullamco eiusmod magna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+    
+     :root {
+        --item-bg-color: #fcfadd;
+    }
+    
+    body {
+        background-color: #5657ff;
+    }
+    
+    .wrap {
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .container {
+        height: 600px;
+        width: 60%;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    .carditems {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .item {
+        flex: 25% 0 0;
+        text-align: center;
+        position: relative;
+        margin-right: 7%;
+        background-color: var(--item-bg-color);
+    }
+    
+    .item:last-child {
+        margin-right: 0;
+    }
+    
+    .item>img {
+        width: 100%;
+    }
+    
+    .txt {
+        margin: 5px 10px;
+        padding: 0 10px;
+        position: relative;
+        background-color: var(--item-bg-color);
+    }
+    
+    .txt::before {
+        content: '';
+        position: absolute;
+        top: -59px;
+        left: -10px;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-left: 144px solid var(--item-bg-color);
+        border-right: 144px solid var(--item-bg-color);
+    }
+    
+    .txt>h2 {
+        margin-bottom: 5px;
+    }
+    
+    .txt>p {
+        text-align: left;
+        padding: 10px 0;
+        line-height: 20px;
+        letter-spacing: .5px;
+        border-top: 1px solid #223;
+    }
+</style>
+
+</html>
