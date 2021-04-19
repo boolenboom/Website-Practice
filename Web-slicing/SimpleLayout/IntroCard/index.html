@@ -16,8 +16,7 @@
                     <img src="https://picsum.photos/300/300?random=1" alt="">
                     <div class="txt">
                         <h2>布蕾</h2>
-                        <p>Elit cillum tempor minim nisi ad anim. Nisi cillum do enim et. Fugiat commodo deserunt Lorem qui ut proident culpa enim enim. Occaecat do sunt anim voluptate cupidatat occaecat quis exercitation dolore exercitation id. Aliquip
-                            veniam dolore esse proident consectetur labore et enim ex aute est consectetur nisi quis.
+                        <p>Elit cillum tempor minim nisi ad anim. Nisi cillum do enim et. Fugiat commodo deserunt Lorem qui ut proident culpa enim enim. Occaecat do sunt anim voluptate cupidatat occaecat quis exercitation dolore exercitation id.
                         </p>
                     </div>
                 </div>
@@ -26,7 +25,6 @@
                     <div class="txt">
                         <h2>數據廟</h2>
                         <p>Adipisicing aliquip proident irure amet eu aliquip mollit culpa. Dolore proident ut nulla pariatur excepteur veniam irure amet minim nulla minim ex ex commodo. Qui pariatur reprehender it sint nostrud officia nostrud nostrud aute
-                            adipisicing au te commodo ullamco excepteur. Anim incididunt nostrud adipisicing fugiat.
                         </p>
                     </div>
                 </div>
@@ -35,7 +33,6 @@
                     <div class="txt">
                         <h2>有個美莓</h2>
                         <p>Mollit minim do excepteur consectetur sunt cupidatat non do anim ipsum deserunt labore voluptate excepteur. Fugiat elit commodo sint eu cillum id. Incididunt sint cillum culpa anim adi pisicing et qui. In in aute culpa fugiat anim
-                            anim dolore n ulla culpa proident ad proident dolor quis. Sunt cupi datat aute Lorem aute consectetur occaecat ullamco eiusmod magna.
                         </p>
                     </div>
                 </div>
@@ -44,7 +41,6 @@
                     <div class="txt">
                         <h2>紅石榴</h2>
                         <p>Mollit minim do excepteur consectetur sunt cupidatat non do anim ipsum deserunt labore voluptate excepteur. Fugiat elit commodo sint eu cillum id. Incididunt sint cillum culpa anim adi pisicing et qui. In in aute culpa fugiat anim
-                            anim dolore n ulla culpa proident ad proident dolor quis. Sunt cupi datat aute Lorem aute consectetur occaecat ullamco eiusmod magna.
                         </p>
                     </div>
                 </div>
@@ -62,10 +58,12 @@
     
      :root {
         --item-bg-color: #fcfadd;
+        --hover-bg-color: #feb85d;
     }
     
     body {
         background-color: #5657ff;
+        z-index: -1;
     }
     
     .wrap {
@@ -82,7 +80,6 @@
         top: 0;
         bottom: 0;
         margin: auto;
-        overflow: hidden;
     }
     
     .carditems {
@@ -90,14 +87,20 @@
         flex-direction: row;
         width: 100%;
         height: 100%;
+        overflow-x: hidden;
     }
     
     .item {
-        flex: 25% 0 0;
+        flex: 300px 0 0;
         text-align: center;
         position: relative;
-        margin-right: 7%;
+        margin-right: 6%;
         background-color: var(--item-bg-color);
+        height: 95%;
+        bottom: -5%;
+        transition: bottom ease .3s;
+        border-radius: 10px;
+        overflow-y: hidden;
     }
     
     .item:last-child {
@@ -106,11 +109,15 @@
     
     .item>img {
         width: 100%;
+        z-index: 10;
+        border-radius: 10px;
+        vertical-align: middle;
     }
     
     .txt {
-        margin: 5px 10px;
-        padding: 0 10px;
+        /* margin: 5px 10px; */
+        padding: 0 20px;
+        height: 54%;
         position: relative;
         background-color: var(--item-bg-color);
     }
@@ -118,14 +125,14 @@
     .txt::before {
         content: '';
         position: absolute;
-        top: -59px;
-        left: -10px;
+        top: -50px;
+        left: 0;
         right: 0;
         width: 0;
         height: 0;
         border-top: 50px solid transparent;
-        border-left: 144px solid var(--item-bg-color);
-        border-right: 144px solid var(--item-bg-color);
+        border-left: 150px solid var(--item-bg-color);
+        border-right: 150px solid var(--item-bg-color);
     }
     
     .txt>h2 {
@@ -138,6 +145,19 @@
         line-height: 20px;
         letter-spacing: .5px;
         border-top: 1px solid #223;
+    }
+    
+    .item:hover {
+        bottom: 0;
+    }
+    
+    .item:hover .txt {
+        background-image: linear-gradient(0deg, #fb8076, var(--hover-bg-color));
+    }
+    
+    .item:hover .txt::before {
+        border-left: 150px solid var(--hover-bg-color);
+        border-right: 150px solid var(--hover-bg-color);
     }
 </style>
 
