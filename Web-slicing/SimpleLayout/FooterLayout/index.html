@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Layout</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="footerlayout">
+            <div class="container">
+                <div class="items">
+                    <div class="item">
+                        <h4>友站分享</h4>
+                        <menu>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> occaecat officia cillum esse.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> quis nulla mollit consequat aute.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Aute laboris sunt consectetur anim.
+                            </a>
+                        </menu>
+                    </div>
+                    <div class="item">
+                        <h4>公司介紹</h4>
+                        <menu>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Est in ea labore adipisicing.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Laboris ipsum consequat veniam anim.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Id veniam duis duis commodo non.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Aute laboris anim.
+                            </a>
+                        </menu>
+                    </div>
+                    <div class="item">
+                        <h4>服務項目</h4>
+                        <menu>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Non amet ullamco esse irure aute ad.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Eiusmod ut sunt in fugiat minim sint.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Ut culpa culpa.
+                            </a>
+                            <a href="#">
+                                <span class="navArr">&gt;</span> Laboris consequat enim anim.
+                            </a>
+                        </menu>
+                    </div>
+                    <div class="item subs">
+                        <h4>訂閱電子報</h4>
+                        <form action="#">
+                            <input type="text" placeholder="your@mail.com"><input type="submit" value="訂閱">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--.ToDo.SVG trademark-->
+            <!-- <div class="sponsor"></div> -->
+            <div class="copyrightbar">
+                Copyright &copy; 2021 先弄再說股份有限公司
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    
+    body {
+        background-color: #000;
+    }
+    
+    .wrap {
+        background-image: linear-gradient(131deg, #4f97f5, #4850cd);
+        width: 100%;
+        height: 600px;
+        position: relative;
+    }
+    
+    .footerlayout {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .footerlayout * {
+        color: #cdcdff;
+    }
+    
+    .container {
+        width: 80%;
+        height: 40%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    
+    .items {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .item {
+        flex: calc(25% - 65px);
+        margin-right: 65px;
+    }
+    
+    .item:last-child {
+        margin-right: unset;
+    }
+    
+    .item>h4 {
+        font-size: 24px;
+        border-bottom: 1px solid #cdcdff;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+    }
+    
+    .item>menu {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .item>menu a {
+        margin-top: 5px;
+    }
+    
+    .item>menu a>span {
+        margin-right: 4px;
+    }
+    
+    .subs {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .subs form {
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+    }
+    
+    .subs input[type='text'],
+    .subs input[type='submit'] {
+        padding: 5px 10px;
+        border: none;
+    }
+    
+    .subs input[type='text'] {
+        flex-grow: 1;
+    }
+    
+    .subs input[type='submit'] {
+        background-color: #4850cd;
+    }
+    
+    .copyrightbar {
+        text-align: center;
+        position: absolute;
+        padding: 1% 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-color: #4850cd;
+    }
+</style>
+
+</html>
