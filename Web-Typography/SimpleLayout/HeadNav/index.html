@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Head Nav</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="wrap">
         <div class="container">
-            <nav class="maniNav">
-                <img src="#" alt="" class="LOGO">
+            <nav class="mainNav">
+                <img src="../Asset/defaultImg/circle.png" alt="" class="LOGO">
                 <div class="navitems">
                     <div class="item">Consequat</div>
                     <div class="item">sint</div>
@@ -21,12 +24,113 @@
                 </div>
                 <form action="#" class="searchSet">
                     <input type="text" id="">
-                    <label for="search"><img src="#" alt=""></label>
+                    <label for="search"><span class="material-icons md-18">
+                        search
+                        </span></label>
                     <input type="submit" value="" name="search" hidden='true'>
                 </form>
             </nav>
         </div>
     </div>
 </body>
+<style>
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+    }
+    
+    .material-icons.md-18 {
+        font-size: 18px;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    
+    .wrap {
+        width: 100%;
+        height: 150px;
+        background: #c8c3aa;
+        position: relative;
+    }
+    
+    .container {
+        width: 75%;
+        height: 80px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    .mainNav {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .LOGO {
+        flex: 80px 0 0;
+    }
+    
+    .navitems {
+        flex: 30% 0 0;
+        display: flex;
+        flex-direction: row;
+        margin: auto 0;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    
+    .item+.item {
+        margin-left: 15%;
+    }
+    
+    .searchSet {
+        flex: calc(30% - 80px) 0 0;
+        margin: auto 0;
+        vertical-align: middle;
+    }
+    
+    .searchSet>input[type='text'] {
+        border: none;
+        border-radius: 40px;
+        padding: 2px 15px;
+        transition: padding .3s ease;
+        outline: none;
+    }
+    
+    .searchSet>input[type='text']:focus {
+        padding-right: 80px;
+    }
+    
+    .searchSet>label {
+        position: relative;
+        left: -30px;
+        top: 3px;
+    }
+</style>
 
 </html>
