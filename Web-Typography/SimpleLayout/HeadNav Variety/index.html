@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head Nav</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <nav class="mainNav">
+                <img src="../Asset/defaultImg/circle.png" alt="" class="LOGO">
+                <div class="navitems">
+                    <div class="item"><a href="#">Consequat </a></div>
+                    <div class="item"><a href="#">sint </a></div>
+                    <div class="item"><a href="#">exercitation </a></div>
+                    <div class="item"><a href="#">culpa </a></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+<style>
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+    }
+    
+    .material-icons.md-18 {
+        font-size: 18px;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    
+    .wrap {
+        width: 100%;
+        height: 150px;
+        background: #c8c3aa;
+        position: relative;
+    }
+    
+    .container {
+        width: 75%;
+        height: 80px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    .mainNav {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .LOGO {
+        flex: 80px 0 0;
+    }
+    
+    .navitems {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: row;
+        margin: auto 0;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    
+    .item {
+        height: 36px;
+        transform: translateY(0px);
+        transition: transform .3s ease;
+        padding-right: 5%;
+    }
+    
+    .item+.item {
+        padding-left: 5%;
+    }
+    
+    .item a {
+        position: relative;
+        color: #fff;
+    }
+    
+    .item a::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        right: 50%;
+        height: 0;
+        border-top: 2px solid #fff;
+        transition: left .3s ease, right .3s ease;
+    }
+    
+    .item:hover {
+        transform: translateY(-3px);
+    }
+    
+    .item:hover a::after {
+        left: 0;
+        right: 0;
+    }
+</style>
+
+</html>
