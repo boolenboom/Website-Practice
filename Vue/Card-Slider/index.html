@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Slider</title>
+</head>
+
+<body>
+    <div class="about">
+        <h1>This is an about pages</h1>
+        <div class="card-slider">
+            <transition-group tag='span' class="card-slider-items">
+                <div v-for='item of showImages' class="card-slider-item" :data-id='item.id' :key='item.id'>
+                    <img :src="item.src" alt="">
+                </div>
+            </transition-group>
+            <div class="sliderbutton">
+                <div class="prev">&lt;</div>
+                <div class="next">&gt;</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                now: 0,
+                imgs: [{
+                    id: 1,
+                    src: ''
+                }, {
+                    id: 2,
+                    src: ''
+                }, {
+                    id: 3,
+                    src: ''
+                }, {
+                    id: 4,
+                    src: ''
+                }, {
+                    id: 5,
+                    src: ''
+                }, ]
+            }
+        },
+        computed: {
+            AllImage() {
+                let ary = [],
+                    count;
+                const total = this.imgs.length;
+                if (total > 0) {
+                    while (ary.length > total + 4) {
+                        count = Math.floor(ary.length / total);
+                        for (const item of this.imgs) {
+                            ary.push({
+                                id: count + '-' + item.id,
+                                src: item.src
+                            });
+                        }
+                    }
+                }
+                return ary;
+            },
+            showImages() {
+                const start = this.now - 4;
+                return this.AllImage.slice(start).concat(this.AllImage.slice(0, start));
+            }
+        }
+    });
+</script>
+<style scoped>
+    .card-slider {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .sliderbutton {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .card-slider-items {
+        display: flex;
+        width: 100%;
+        margin-left: calc(-1 * 25% * 2.5);
+    }
+    
+    .card-slider-item {
+        z-index: 1;
+        flex: calc(25% - 20px) 0 0;
+        margin: 10px;
+    }
+    
+    .card-slider-item:first-child,
+    .card-slider-item:last-child {
+        z-index: -1;
+        visibility: hidden;
+    }
+    
+    img {
+        width: 100%;
+    }
+</style>
+
+</html>
