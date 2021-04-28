@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrap">
+        <form action="#" class="login" enctype="application/x-www-form-urlencoded">
+            <h2>Login</h2>
+            <div class="group">
+                <h4>Account</h4>
+                <input type="text" placeholder="Your@mail.com" tabindex="1">
+            </div>
+            <div class="group">
+                <h4>Password</h4>
+                <input type="text" placeholder="****************************" tabindex="2">
+            </div>
+            <div class="helping"><a href="#">forget password？</a></div>
+            <div class="group-btn">
+                <input type="submit" value="Sign in" class="btn" tabindex="3">
+                <input type="submit" value="Register" class="btn" tabindex="4">
+            </div>
+        </form>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(https://picsum.photos/1920/1080?random=1) no-repeat center center/cover;
+    }
+    
+    .wrap {
+        width: 40%;
+        height: 400px;
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0 30px #000;
+        border: 2px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .login {
+        width: 50%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -10px;
+    }
+    
+    .login>h2 {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 14px;
+    }
+    
+    .group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+        line-height: 2;
+    }
+    
+    .group>input[type='text'] {
+        padding: 3px 6px;
+    }
+    
+    .helping>a {
+        color: #fff;
+        float: right;
+    }
+    
+    [class*='-btn'] {
+        margin-top: 20px;
+        font-size: 0;
+    }
+    
+    .btn {
+        font-size: 20px;
+        width: calc(50% - 10px);
+        border-radius: 5px;
+        border: none;
+        background-color: #6ab4fe;
+        color: #fff;
+        padding-bottom: 4px;
+    }
+    
+    .btn+.btn {
+        margin-left: 20px;
+    }
+</style>
+
+</html>
