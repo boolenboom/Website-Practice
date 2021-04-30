@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Path</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <ol class="path">
+            <li class="item">
+                <a href="#">
+                    Adipisicing
+                </a>
+            </li>
+            <li class="item">
+                <a href="#">
+                    Consectetur
+                </a>
+            </li>
+            <li class="item">
+                <a href="#">
+                    Ipsum
+                </a>
+            </li>
+            <li class="item">
+                <a href="#">
+                    Nulla aut
+                </a>
+            </li>
+            <li class="item">
+                <a href="#">
+                    Cillum
+                </a>
+            </li>
+        </ol>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: Helvetica, sans-serif;
+        list-style: none;
+    }
+    
+    html,
+    body {
+        height: 100%;
+    }
+    
+    .wrap {
+        width: 100%;
+        padding: 20px 0;
+        background-color: #769afe;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+    }
+    
+    .path {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #ffe;
+    }
+    
+    .item {
+        font-size: 0;
+    }
+    
+    .item>a {
+        color: #ffe;
+        font-size: 1rem;
+        padding: 0 0;
+        transition: padding .3s ease, font-size .3s ease;
+    }
+    
+    .item>a:hover,
+    .item:last-child a {
+        color: #761;
+        padding: 0 5px;
+        font-size: 1.2rem;
+    }
+    
+    .item+.item::before {
+        font-size: 1rem;
+        content: '>';
+        position: relative;
+        margin: 0 12px;
+        font-weight: 500;
+    }
+</style>
+
+</html>
