@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Imgs</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="blockImg">
+            <div class="item">
+                <div class="txt">
+                    <h1>Some Coffee <span>Here.</span></h1>
+                    <h4>Aliqua magna proident nostrud sint.</h4>
+                </div>
+                <img src="https://images.unsplash.com/photo-1482242248426-c4e9fe3a559a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt=""></div>
+            <div class="item">
+                <div class="txt">
+                    <h1>Wide<br> Light <br> Comfortable</h1>
+                    <h4>Nulla et et mollit laboris consequat sit dolor exercitation fugiat.</h4>
+                </div>
+                <img src="https://images.unsplash.com/photo-1599156028174-cbcd88bf7305?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt=""></div>
+            <div class="item">
+                <div class="txt">
+                    <h1>Every bite, <br> enjoy forever</h1>
+                    <h4>Dolor consectetur ea aliqua dolor esse reprehenderit pariatur consequat duis aliqua minim nostrud.</h4>
+                </div>
+                <img src="https://images.unsplash.com/photo-1541779972238-2c60cd11ffc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt=""></div>
+            <div class="item">
+                <div class="txt">
+                    <h1>Take a Break</h1>
+                    <h4>Aute cupidatat in reprehenderit duis tempor ex.</h4>
+                </div>
+                <img src="https://images.unsplash.com/photo-1520885637330-6f0337def17a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt=""></div>
+            <div class="item">
+                <div class="txt">
+                    <h1>Immersed</h1>
+                    <h4>Dolor in aute laboris veniam anim sint.</h4>
+                </div>
+                <img src="https://images.unsplash.com/photo-1519336209495-635a77ec5f09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt=""></div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .wrap {
+        width: 100%;
+        height: 800px;
+    }
+    
+    .blockImg {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .item {
+        width: 25%;
+        height: 50%;
+        float: left;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .item:first-child {
+        width: 50%;
+        height: 100%;
+    }
+    
+    .item>.txt {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 15%;
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, .6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        opacity: 0;
+        transition: .3s;
+        line-height: 1.6;
+    }
+    
+    .txt:hover {
+        opacity: 1;
+    }
+    
+    .item>img {
+        height: 100%;
+    }
+</style>
+
+</html>
