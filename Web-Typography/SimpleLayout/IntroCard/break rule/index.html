@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Card(break rule)</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="introCard">
+            <div class='item'>
+                <div class="icon">
+                    <span class="material-icons md-85">gavel</span>
+                </div>
+                <div class="txt">
+                    <h3>Raise the people's gavel</h3>
+                    <p>Fugiat cupidatat in nostrud dolor minim nostrud laboris aliquip non ea eiusmod occaecat sit. Aliqua et exercitation dolor ad. Nostrud minim sunt ea tempor enim quis cupidatat quis culpa eiusmod. Do aliquip consequat id culpa sit.</p>
+                </div>
+            </div>
+            <div class='item'>
+                <div class="icon">
+                    <span class="material-icons md-85">lock</span>
+                </div>
+                <div class="txt">
+                    <h3>Security</h3>
+                    <p>Consectetur cupidatat in dolore magna consectetur adipisicing sit ex fugiat exercitation ad sit. Est dolor duis consectetur duis dolor fugiat minim ea ut est est. Est cupidatat veniam ex excepteur ex eu reprehenderit dolore cupidatat
+                        laboris incididunt aliqua proident. Ea in enim officia nostrud. Pariatur non est magna esse exercitation pariatur id reprehenderit pariatur minim voluptate consequat proident.</p>
+                </div>
+            </div>
+            <div class='item'>
+                <div class="icon">
+                    <span class="material-icons md-85">arrow_circle_up</span>
+                </div>
+                <div class="txt">
+                    <h3>Promote justice</h3>
+                    <p>Ad et cupidatat officia sit deserunt dolor cupidatat cupidatat incididunt irure elit mollit. Consectetur occaecat irure in pariatur ad laboris laborum. Cillum deserunt consectetur enim esse amet velit qui. Tempor ea fugiat in reprehenderit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: Helvetica, sans-serif;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    
+    body {
+        display: flex;
+        align-items: center;
+        background-color: #f6c5b8;
+    }
+    
+    .wrap {
+        width: 100%;
+    }
+    
+    .introCard {
+        padding-top: 75px;
+        display: flex;
+        margin: 100px auto;
+        width: 60%;
+        flex-direction: row;
+        height: 100%;
+    }
+    
+    .item {
+        flex: calc(33.3% - 6%);
+        flex-direction: column;
+        text-align: center;
+        background-color: #fff;
+        border: 8px solid #f9cec2;
+        border-radius: 20px;
+        box-sizing: border-box;
+        box-shadow: 10px 20px 50px #f7b6a7;
+    }
+    
+    .item+.item {
+        margin-left: 3%;
+    }
+    
+    .icon {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        color: #f9cec2;
+        margin: -75px auto 0;
+        background-color: #fff;
+        position: relative;
+    }
+    
+    .icon::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 8px solid #f9cec2;
+        border-right: 8px solid #f9cec2;
+        border-bottom: 8px solid transparent;
+        border-left: 8px solid transparent;
+        top: -8px;
+        left: -8px;
+        border-radius: 50%;
+        transform: rotate(-45deg);
+    }
+    
+    .material-icons.md-85 {
+        font-size: 85px;
+        line-height: 150px;
+    }
+    
+    .txt {
+        padding: 0 5% 10% 5%;
+    }
+    
+    .txt>h3 {
+        color: #f9cec2;
+    }
+    
+    .txt>p {
+        padding: 8px 16px;
+        text-align: left;
+    }
+    
+    .item:hover .material-icons {
+        animation: shake .3s linear infinite alternate;
+    }
+    
+    @keyframes shake {
+        0% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+</html>
