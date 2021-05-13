@@ -9,42 +9,45 @@
 </head>
 
 <body>
-    <div class="about">
+    <div id="app" class="about">
         <h1>This is an about pages</h1>
         <div class="card-slider">
-            <transition-group tag='span' class="card-slider-items">
+            <transition-group tag='span' class="card-slider-items" name='fadedir'>
                 <div v-for='item of showImages' class="card-slider-item" :data-id='item.id' :key='item.id'>
                     <img :src="item.src" alt="">
                 </div>
             </transition-group>
             <div class="sliderbutton">
-                <div class="prev">&lt;</div>
-                <div class="next">&gt;</div>
+                <div class="item" @click='buttonHandler(-1)'>&lt;</div>
+                <div class="item" @click='buttonHandler(1)'>&gt;</div>
             </div>
         </div>
     </div>
 </body>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js' integrity='sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==' crossorigin='anonymous'></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.2/vue.js' crossorigin='anonymous'></script>
 <script>
     new Vue({
         el: '#app',
         data() {
             return {
+                fadedir: 'left-move',
                 now: 0,
                 imgs: [{
                     id: 1,
-                    src: ''
+                    src: 'https://images.pexels.com/photos/2428822/pexels-photo-2428822.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
                 }, {
                     id: 2,
-                    src: ''
+                    src: 'https://images.pexels.com/photos/7363245/pexels-photo-7363245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
                 }, {
                     id: 3,
-                    src: ''
+                    src: 'https://images.pexels.com/photos/7379683/pexels-photo-7379683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
                 }, {
                     id: 4,
-                    src: ''
+                    src: 'https://images.pexels.com/photos/6920128/pexels-photo-6920128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
                 }, {
                     id: 5,
-                    src: ''
+                    src: 'https://images.pexels.com/photos/7814168/pexels-photo-7814168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
                 }, ]
             }
         },
@@ -53,8 +56,9 @@
                 let ary = [],
                     count;
                 const total = this.imgs.length;
+                console.log(total);
                 if (total > 0) {
-                    while (ary.length > total + 4) {
+                    while (ary.length < total + 4) {
                         count = Math.floor(ary.length / total);
                         for (const item of this.imgs) {
                             ary.push({
@@ -70,6 +74,14 @@
                 const start = this.now - 4;
                 return this.AllImage.slice(start).concat(this.AllImage.slice(0, start));
             }
+        },
+        methods: {
+            buttonHandler(val) {
+                const limit = this.AllImage.length - 1;
+                this.now += val;
+                this.now = this.now > limit ? 0 : this.now < 0 ? limit : this.now;
+                this.fadedir = val > 0 ? 'right-move' : 'left-move';
+            }
         }
     });
 </script>
@@ -84,6 +96,14 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        z-index: 2;
+    }
+    
+    .sliderbutton>.item {
+        font-size: 5rem;
+        height: 10%;
+        font-weight: 600;
+        background-color: rgba(32, 32, 32, .3);
     }
     
     .card-slider-items {
@@ -106,6 +126,35 @@
     
     img {
         width: 100%;
+        height: 100%;
+    }
+    
+    .fadedir-move {
+        transition: transform 0.5s;
+    }
+    
+    .left-move-enter-active,
+    .left-move-leave-active,
+    .right-move-enter-active,
+    .right-move-leave-active {
+        transition: transform .3s ease;
+    }
+    
+    .left-move-enter,
+    .left-move-leave,
+    .right-move-enter,
+    .right-move-leave {
+        transform: translateX(0);
+    }
+    
+    .left-move-enter-to,
+    .left-move-leave-to {
+        transform: translateX(-100%);
+    }
+    
+    .right-move-enter-to,
+    .right-move-leave-to {
+        transform: translateX(100%);
     }
 </style>
 
