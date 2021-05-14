@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post number</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="selection">
+            <select name="city" v-model='citySelect'>
+                <option :value="null">請選擇縣市</option>
+                <option v-for='city,index of postlist' :value="index" :key='city'>{{city}}</option>
+            </select>
+            <select name="dist" v-model='distSelect'>
+                <option :value="null">請選擇區域</option>
+                <option v-for='dist,index of distlist' :value="index" :key='dist'>{{dist}}</option>
+            </select>
+        </div>
+        <div class="postNum">{{postNum}}</div>
+    </div>
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js' integrity='sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.2/vue.js' integrity='sha512-9cBpxTrWHJC8JqDUn0uJpGWG80V3DiGiu2u1YHt2EqF+qloD6IvkOJaIZOdGBOTy0BisjueoEyG7vsdEYlmi4g==' crossorigin='anonymous'></script>
+<script>
+    let dataURL = 'post.json',
+        xhr = new XMLHttpRequest();
+    xhr.open('GET', dataURL, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            const postData = JSON.parse(this.responseText);
+            console.log(postData);
+            new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        // postData: postData,
+                        citySelect: null,
+                        distSelect: null
+                    }
+                },
+                computed: {
+                    postlist() {
+                        return [].map.call(postData, (item) => {
+                            return item.name;
+                        });
+                    },
+                    distlist() {
+                        let ary = [];
+                        if (this.citySelect !== null) {
+                            ary = [].map.call(postData[this.citySelect].districts, (item) => {
+                                return item.name;
+                            });
+                        }
+                        return ary;
+                    },
+                    postNum() {
+                        if (this.citySelect !== null && this.distSelect !== null) {
+                            return postData[this.citySelect].districts[this.distSelect].zip;
+                        }
+                        return null;
+                    }
+                },
+                watch: {
+                    citySelect: function(nVal, oVal) {
+                        if (nVal !== oVal) this.distSelect = null;
+                    }
+                }
+            });
+        }
+    }
+</script>
+
+</html>
